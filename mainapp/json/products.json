@@ -1,0 +1,50 @@
+[
+    {
+        "category": "Home",
+        "name": "Sofa",
+        "price": 1000,
+        "quantity": 5
+    },
+    {
+        "category": "Home",
+        "name": "Bed",
+        "price": 800,
+        "quantity": 10
+    },
+    {
+        "category": "Office",
+        "name": "Table",
+        "price": 150,
+        "quantity": 3
+    },
+    {
+        "category": "Office",
+        "name": "Chair",
+        "price": 50,
+        "quantity": 7
+    },
+    {
+        "category": "Bathroom",
+        "name": "Sink",
+        "price": 100,
+        "quantity": 15
+    },
+    {
+        "category": "Bathroom",
+        "name": "Mirror",
+        "price": 70,
+        "quantity": 15
+    },
+    {
+        "category": "Outdoor",
+        "name": "BBQ",
+        "price": 500,
+        "quantity": 20
+    },
+    {
+        "category": "Outdoor",
+        "name": "Garden Chair",
+        "price": 50,
+        "quantity": 7
+    }
+]

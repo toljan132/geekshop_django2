@@ -1,0 +1,44 @@
+{% load static %}
+
+<ul class="menu">
+    <li><a class="{% if request.resolver_match.view_name == 'index' %}
+                        active
+                      {% endif %}" href="{% url 'index' %}">HOME</a></li>
+    <li><a class="{% if request.resolver_match.namespace == 'products' %}
+                        active
+                      {% endif %}" href="{% url 'products:index' %}">PRODUCTS</a></li>
+    <li><a class="{% if request.resolver_match.url_name == 'contacts' %}
+                        active
+                      {% endif %}" href="{% url 'contacts' %}">CONTACT</a></li>
+    <li><a href="#"><img src="{% static '/img/search.svg' %}" alt="search"></a></li>
+    {% if user.is_authenticated %}
+        <li>
+            <a href="{% url 'auth:edit' %}">
+                {{ user.username|title }}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'basket:view' %}" class="basket">
+    <span>
+    {% if basket %}
+        {{ basket.0.total_cost|floatformat:0 }} $
+        ({{ basket.0.total_quantity }} шт)
+    {% endif %}
+    </span>
+            </a>
+        </li>
+
+
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'auth:logout' %}">logout</a></li>
+    {% else %}
+        <li><a href="{% url 'auth:login' %}">login</a></li>
+        <li><a href="{% url 'auth:register' %}">registration</a></li>
+    {% endif %}
+    {% if request.user.is_superuser %}
+    <a href="{% url 'admin_custom:categories' %}">админка</a>
+    {% endif %}
+
+</ul>

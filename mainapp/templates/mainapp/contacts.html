@@ -1,0 +1,102 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    <title>Contacts</title>
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="top">
+            <div class="container">
+                <div class="product_range padding-site">
+                    <div class="header ">
+                        <a class="logo" href="/"><img src="/static/img/logo.svg" alt="logo"></a>
+                        {% include 'mainapp/includes/inc_menu.html' %}
+                    </div>
+                    <span class="header_text">Contact Us</span>
+                </div>
+                <div class="contact_box">
+                    <a href="#" class="contact_details">
+                        <img src="/static/img/cursor.png" alt="cursor">
+                        <h3 class="contact_details_h3">California</h3>
+                        <p class="phone">Phone:</p>
+                        <p class="info">1900 - 1234 -5678</p><br>
+                        <p class="phone">Email:</p>
+                        <p class="info">info@interior.com</p><br>
+                        <p class="phone">Adress:</p>
+                        <p class="info">12 W 1st St, 90001 Los Angeles, California</p>
+                    </a>
+                    <a href="#" class="contact_details">
+                        <img src="/static/img/cursor.png" alt="cursor">
+                        <h3 class="contact_details_h3">California</h3>
+                        <p class="phone">Phone:</p>
+                        <p class="info">1900 - 1234 -5678</p><br>
+                        <p class="phone">Email:</p>
+                        <p class="info">info@interior.com</p><br>
+                        <p class="phone">Adress:</p>
+                        <p class="info">12 W 1st St, 90001 Los Angeles, California</p>
+                    </a>
+                    <a href="#" class="contact_details">
+                        <img src="/static/img/cursor.png" alt="cursor">
+                        <h3 class="contact_details_h3">California</h3>
+                        <p class="phone">Phone:</p>
+                        <p class="info">1900 - 1234 -5678</p><br>
+                        <p class="phone">Email:</p>
+                        <p class="info">info@interior.com</p><br>
+                        <p class="phone">Adress:</p>
+                        <p class="info">12 W 1st St, 90001 Los Angeles, California</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer padding-site">
+
+                <div class="footer-top">
+                    <div class="contact">
+                        <h3 class="footer-h3">CONTACT US</h3>
+                        <p class="contact-p">132A Bridge Road Richmand VIC Australia<br> <br>Talk to us on 1300132
+                            info@interior.com</p>
+                    </div>
+                    <div class="useful">
+                        <h3 class="footer-h3">USEFUL INFORMATION</h3>
+                        <div class="mini-menu">
+                            <div class="menu-mini right-margin">
+                                <a href="#">SALES TERMS</a>
+                                <a href="#">CUSTOMER CARE</a>
+                                <a href="#">DELIVERY</a>
+                            </div>
+                            <div class="menu-mini">
+                                <a href="#">ARCHITECT ACCOUNTS</a>
+                                <a href="#">CAREERS</a>
+                                <a href="#">EXCHANGES & RETURNS</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="touch">
+                        <h3 class="footer-h3">LET'S STAY IN TOUCH</h3>
+                        <p class="contact-p">Subscribe to know about our latest news, products and spoecial offers just
+                            for subscribers.</p>
+                        <form class="email-form" action="#">
+                            <input class="contact-email" type="text" placeholder="your email adress">
+                            <input class="email-button" type="submit" value="">
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <p>&copy; COPYRIGHT - INTERIOR 2016.ALL RIGHTS RESERVED</p>
+                    </div>
+                    <div class="s-links">
+                        <a href="#"><img src="/static/img/social-links.png" alt="links"></a>
+                    </div>
+                    <div class="terms">
+                        <a href="#">TERMS & CONDITIONS/PRIVACY POLICY & COOKIES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

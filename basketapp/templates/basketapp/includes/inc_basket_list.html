@@ -1,0 +1,33 @@
+{% if basket_items %}
+
+<div class="basket_summary">
+  В корзине {{ basket_items.0.total_quantity }} товаров общей стоимостью
+            {{ basket_items.0.total_cost }} $
+</div>
+
+{% endif %}
+
+{% for item in basket_items %}
+<div class="card" style="width: 18rem;">
+  <img src="/media/{{ item.product.image }}" class="card-img-top" alt="{{ item.product.short_desc }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ item.product.name }}</h5>
+    <p class="card-text">{{ item.product.short_desc }}</p>
+    <p class="card-text">{{ item.product.price }}&nbsp$</p>
+    <span class="product_cost">{{ item.product_cost }}&nbsp$</span>
+    <input type="number" name="{{ item.pk }}"
+                       min="0"
+                       value="{{ item.quantity }}">
+    <a href="{% url 'basket:remove' item.pk %}" class="btn btn-primary">delete</a>
+  </div>
+</div>
+
+{% endfor %}
+
+<button class="btn btn-round">
+  <a href="{% url 'index' %}">home</a>
+</button>
+
+
+
+

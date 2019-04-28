@@ -1,0 +1,113 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block title %}
+    <title>Products</title>
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="top">
+            <div class="container">
+                <div class="product_range padding-site">
+                    <div class="header ">
+                        <a class="logo" href="/"><img src="/static/img/logo.svg" alt="logo"></a>
+                        {% include 'mainapp/includes/inc_menu.html' %}
+                    </div>
+                    <span class="header_text">Our Products Range</span>
+                </div>
+                {% include 'mainapp/includes/inc_categories_menu.html' %}
+                <div class="trending_items padding-site">
+                    {% for product in products %}
+
+                        <a class="trending_item" href="{% url 'products:product' product.pk %}">
+                            <img class="product-image" src="/media/{{ product.image }}" alt="product">
+                            <div class="product_text">
+                                <h4>{{ product.name }}</h4>
+                                <p>{{ product.short_desc }}</p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+
+
+                <div class="exclusive_product">
+                    <div class="exl_left">
+                        <div class="exclusive_text">
+                            <h4 class="exclusive-h4">exclusive</h4>
+                            <h2 class="exclusive-h2">Fishnet Chair</h2>
+                            <p class="exclusive-p">
+                                Seat and back with upholstery made of cold cure foam. Steel frame, available in matt
+                                powder-coated black
+                                or highly polished chrome.
+                            </p>
+                            <a href="#" class="button">order us <img class="arrow" src="/static/img/arrow.png"
+                                                                     alt="arrow"></a>
+                        </div>
+                    </div>
+                    <div class="exl_right">
+                        <div class="exclusive_text">
+                            <h4 class="exclusive-h4">exclusive</h4>
+                            <h2 class="exclusive-h2">Fishnet Chair</h2>
+                            <p class="exclusive-p">
+                                Seat and back with upholstery made of cold cure foam. Steel frame, available in matt
+                                powder-coated black
+                            </p>
+                            <a href="#" class="button">order us <img class="arrow" src="/static/img/arrow.png"
+                                                                     alt="arrow"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer padding-site">
+
+                <div class="footer-top">
+                    <div class="contact">
+                        <h3 class="footer-h3">CONTACT US</h3>
+                        <p class="contact-p">132A Bridge Road Richmand VIC Australia<br> <br>Talk to us on 1300132
+                            info@interior.com</p>
+                    </div>
+                    <div class="useful">
+                        <h3 class="footer-h3">USEFUL INFORMATION</h3>
+                        <div class="mini-menu">
+                            <div class="menu-mini right-margin">
+                                <a href="#">SALES TERMS</a>
+                                <a href="#">CUSTOMER CARE</a>
+                                <a href="#">DELIVERY</a>
+                            </div>
+                            <div class="menu-mini">
+                                <a href="#">ARCHITECT ACCOUNTS</a>
+                                <a href="#">CAREERS</a>
+                                <a href="#">EXCHANGES & RETURNS</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="touch">
+                        <h3 class="footer-h3">LET'S STAY IN TOUCH</h3>
+                        <p class="contact-p">Subscribe to know about our latest news, products and spoecial offers just
+                            for subscribers.</p>
+                        <form class="email-form" action="#">
+                            <input class="contact-email" type="text" placeholder="your email adress">
+                            <input class="email-button" type="submit" value="">
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <p>&copy; COPYRIGHT - INTERIOR 2016.ALL RIGHTS RESERVED</p>
+                    </div>
+                    <div class="s-links">
+                        <a href="#"><img src="/static/img/social-links.png" alt="links"></a>
+                    </div>
+                    <div class="terms">
+                        <a href="#">TERMS & CONDITIONS/PRIVACY POLICY & COOKIES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

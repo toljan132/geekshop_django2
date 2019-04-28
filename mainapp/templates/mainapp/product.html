@@ -1,0 +1,94 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    <title>Products</title>
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="top">
+            <div class="container">
+                <div class="product_range padding-site">
+                    <div class="header">
+                        <a class="logo" href="/"><img src="/static/img/logo.svg" alt="logo"></a>
+                        {% include 'mainapp/includes/inc_menu.html' %}
+
+                    </div>
+                    <span class="header_text">{{ product.category }}</span>
+                </div>
+                <div class="item_info_box padding-site">
+                    <div class="item_image">
+                        <img src="/media/{{ product.image }}" alt="chair">
+{#                        <div class="imp_pagination">#}
+{#                            <img src="img/img_pag1.png" alt="chair">#}
+{#                            <img src="img/img_pag2.png" alt="">#}
+{#                            <img src="img/img_pag3.png" alt="">#}
+{#                        </div>#}
+                    </div>
+                    <div class="item_info">
+                        <div class="item_text">
+                            <h2 class="item-h2">{{ product.name }}</h2>
+                            <h4 class="item-h4">{{ product.category }}</h4>
+                            <span class="item_price">$ <span class="price_digits">{{ product.price }}</span></span>
+                            <a href="{% url 'basket:add' product.pk %}" class="order_button">order us <img
+                                    class="arrow_red" src="/static/img/arrow3.png"
+                                    alt="arrow"></a>
+                            <p class="item-p">
+                                {{ product.description }}
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer padding-site item-footer">
+
+                <div class="footer-top">
+                    <div class="contact">
+                        <h3 class="footer-h3">CONTACT US</h3>
+                        <p class="contact-p">132A Bridge Road Richmand VIC Australia<br> <br>Talk to us on 1300132
+                            info@interior.com</p>
+                    </div>
+                    <div class="useful">
+                        <h3 class="footer-h3">USEFUL INFORMATION</h3>
+                        <div class="mini-menu">
+                            <div class="menu-mini right-margin">
+                                <a href="#">SALES TERMS</a>
+                                <a href="#">CUSTOMER CARE</a>
+                                <a href="#">DELIVERY</a>
+                            </div>
+                            <div class="menu-mini">
+                                <a href="#">ARCHITECT ACCOUNTS</a>
+                                <a href="#">CAREERS</a>
+                                <a href="#">EXCHANGES & RETURNS</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="touch">
+                        <h3 class="footer-h3">LET'S STAY IN TOUCH</h3>
+                        <p class="contact-p">Subscribe to know about our latest news, products and spoecial offers just
+                            for subscribers.</p>
+                        <form class="email-form" action="#">
+                            <input class="contact-email" type="text" placeholder="your email adress">
+                            <input class="email-button" type="submit" value="">
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <p>&copy; COPYRIGHT - INTERIOR 2016.ALL RIGHTS RESERVED</p>
+                    </div>
+                    <div class="s-links">
+                        <a href="#"><img src="/static/img/social-links.png" alt="links"></a>
+                    </div>
+                    <div class="terms">
+                        <a href="#">TERMS & CONDITIONS/PRIVACY POLICY & COOKIES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
