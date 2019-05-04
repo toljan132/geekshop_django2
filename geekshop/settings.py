@@ -25,7 +25,7 @@ SECRET_KEY = 'nt*823e&*jgab-^zc9k_)*y!zn__b1^u8s_nm#5nm975fk#jh)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.43.115', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'mainapp.context_processors.basket',
             ],
         },
     },
@@ -127,3 +128,15 @@ MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 
 AUTH_USER_MODEL = 'authapp.ShopUser'
 LOGIN_URL = '/auth/login/'
+
+
+DOMAIN_NAME = 'http://127.0.0.1:8000'
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = 'test-django@mail.ru'
+EMAIL_HOST_PASSWORD = 'nQEkjf8pX4w6mLJ'
+EMAIL_USE_SSL = True
+
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# EMAIL_FILE_PATH = 'tmp/email-messages/'

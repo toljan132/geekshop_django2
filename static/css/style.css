@@ -849,3 +849,8 @@ body {
 .basket_record img {
     width: 200px;
 }
+
+.verify_mail {
+    font-size: 25px;
+    font-weight: 500;
+}

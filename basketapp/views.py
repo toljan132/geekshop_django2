@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 
+
 @login_required
 def basket(request):
     basket = request.user.basket.all()

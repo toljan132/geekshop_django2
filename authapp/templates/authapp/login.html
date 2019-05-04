@@ -13,10 +13,13 @@
 
     <form class="form-horizontal" method="post">
         {% csrf_token %}
+        <p class="verify_mail">{{ send }}</p>
+        <br>
         {% if next %}
             <input type="hidden" name="next" value="{{ next }}">
         {% endif %}
         {{ login_form.as_p }}
+
         <br>
         <input class="btn btn-primary" type="submit" value="Login">
     </form>

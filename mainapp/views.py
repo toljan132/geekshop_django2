@@ -2,11 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, ProductCategory
 from basketapp.models import Basket
 
-def get_basket(user):
-    if user.is_authenticated:
-        return Basket.objects.filter(user=user)
-    else:
-        return []
+# def get_basket(user):
+#     if user.is_authenticated:
+#         return Basket.objects.filter(user=user)
+#     else:
+#         return []
 
 def get_hot_product():
     return Product.objects.all().order_by('?').first()
@@ -19,17 +19,17 @@ def get_same_products(hot_product):
 
 
 def main(request):
-    basket = get_basket(request.user)
-    context = {
-        'basket': basket,
-    }
+    # basket = get_basket(request.user)
+    # context = {
+    #     'basket': basket,
+    # }
 
-    return render(request, 'mainapp/index.html', context)
+    return render(request, 'mainapp/index.html')
 
 
 def products(request, pk=None):
     links_menu = ProductCategory.objects.all()
-    basket = get_basket(request.user)
+    # basket = get_basket(request.user)
 
     if pk:
         if pk == '0':
@@ -44,7 +44,7 @@ def products(request, pk=None):
             'links_menu': links_menu,
             'products': product_list,
             'category': category,
-            'basket': basket,
+            # 'basket': basket,
         }
         return render(request, 'mainapp/product_list.html', context)
     else:
@@ -58,7 +58,7 @@ def products(request, pk=None):
             'links_menu': links_menu,
             'hot_product': hot_product,
             'same_products': same_products,
-            'basket': basket,
+            # 'basket': basket,
         }
         return render(request, 'mainapp/products.html', context)
 
@@ -70,15 +70,15 @@ def product(request, pk):
         'title': title,
         'links_menu': ProductCategory.objects.all(),
         'product': get_object_or_404(Product, pk=pk),
-        'basket': get_basket(request.user)
+        # 'basket': get_basket(request.user)
     }
 
     return render(request, 'mainapp/product.html', context)
 
 
 def contacts(request):
-    basket = get_basket(request.user)
-    context = {
-        'basket': basket,
-    }
-    return render(request, 'mainapp/contacts.html', context)
+    # basket = get_basket(request.user)
+    # context = {
+    #     'basket': basket,
+    # }
+    return render(request, 'mainapp/contacts.html')
